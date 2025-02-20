@@ -5,6 +5,10 @@ pipeline {
         cron('H/10 * * * 1')  // Trigger the pipeline every 10 minutes on Mondays
     }
 
+    tools {
+        maven 'Maven'
+    }
+
     stages {
         stage('Build, Test & Generate Jacoco Report') {
             steps {
